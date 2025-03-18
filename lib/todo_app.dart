@@ -158,6 +158,11 @@ class _TodoAppState extends State<TodoApp> {
               ),
               const SizedBox(height: 20),
               const Text("Daftar Tugas", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              Expanded(
+                child: ListView.builder(
+                  
+                ),
+              ),
             ],
           ),
         ),
