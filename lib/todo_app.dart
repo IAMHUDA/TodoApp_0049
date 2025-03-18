@@ -50,7 +50,13 @@ class _TodoAppState extends State<TodoApp> {
                     icon: const Icon(Icons.date_range_rounded, color: Colors.blue),
                   ),
             ],
-          )
+          ),
+          if (selectedDate == null)
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 5),
+                  child: Text("Silakan pilih tanggal", style: TextStyle(color: Colors.red)),
+                ),
+              const SizedBox(height: 10),
         ],
       ),
       )
