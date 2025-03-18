@@ -83,9 +83,7 @@ class _TodoAppState extends State<TodoApp> {
           Column(
             children: [
               const Text("Nama Tugas", style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
-              TextFormField(
-                
-              )
+              
             ],
           ))
         ],
