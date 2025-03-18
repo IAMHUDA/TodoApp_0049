@@ -91,6 +91,7 @@ class _TodoAppState extends State<TodoApp> {
               const SizedBox(height: 10),
               Form(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
                       "Nama Tugas",
@@ -111,6 +112,21 @@ class _TodoAppState extends State<TodoApp> {
                         }
                         return null;
                       },
+                    ),
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 40,
+                      child: ElevatedButton(
+                        onPressed: (){},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.purple,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        child: const Text("Tambah Tugas", style: TextStyle(color: Colors.white)),
+                      ),
                     ),
                   ],
                 ),
