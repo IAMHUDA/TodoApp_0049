@@ -79,6 +79,15 @@ class _TodoAppState extends State<TodoApp> {
                   child: Text("Silakan pilih tanggal", style: TextStyle(color: Colors.red)),
                 ),
               const SizedBox(height: 10),
+          Form(child: 
+          Column(
+            children: [
+              const Text("Nama Tugas", style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+              TextFormField(
+                
+              )
+            ],
+          ))
         ],
       ),
       )
