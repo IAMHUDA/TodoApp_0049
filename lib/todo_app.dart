@@ -26,12 +26,17 @@ class _TodoAppState extends State<TodoApp> {
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 children: [
                   const Text("Task Date:", style: TextStyle(fontWeight: FontWeight.bold)),
                 ],
-              )
+              ),
+              IconButton(
+                    onPressed: (){},
+                    icon: const Icon(Icons.date_range_rounded, color: Colors.blue),
+                  ),
             ],
           )
         ],
