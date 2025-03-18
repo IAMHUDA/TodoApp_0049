@@ -192,7 +192,8 @@ class _TodoAppState extends State<TodoApp> {
               const Text("Daftar Tugas", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               Expanded(
                 child: ListView.builder(
-                  
+                  itemCount: tasks.length,
+                  itemBuilder: (context, index) => _buildTaskItem(tasks[index], index),
                 ),
               ),
             ],
