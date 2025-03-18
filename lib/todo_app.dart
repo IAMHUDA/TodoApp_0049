@@ -14,6 +14,28 @@ class _TodoAppState extends State<TodoApp> {
   final TextEditingController _nameController = TextEditingController();
   DateTime? selectedDate;
 
+  void _pickDate() {
+    BottomPicker.date(
+  pickerTitle: Text(
+        'Set date',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 15,
+          color: Colors.blue,
+        ),
+      ),
+      onSubmit: (date) {
+        setState(() {
+          selectedDate = date;
+        });
+      },
+      initialDateTime: DateTime.now(),
+      maxDateTime: DateTime(2100),
+      minDateTime: DateTime(2000),
+      pickerTextStyle: const TextStyle(fontSize: 16, color: Colors.black),
+    ).show(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +68,7 @@ class _TodoAppState extends State<TodoApp> {
                 ],
               ),
               IconButton(
-                    onPressed: (){},
+                    onPressed: _pickDate,
                     icon: const Icon(Icons.date_range_rounded, color: Colors.blue),
                   ),
             ],
