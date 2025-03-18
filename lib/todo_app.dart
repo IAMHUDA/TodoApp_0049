@@ -28,13 +28,21 @@ class _TodoAppState extends State<TodoApp> {
       Padding(padding: 
       const EdgeInsets.all(20.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text("Task Date:", style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(
+                        selectedDate != null
+                            ? DateFormat("dd-MM-yyyy HH:mm").format(selectedDate!)
+                            : "Pilih tanggal",
+                        style: const TextStyle(color: Colors.black54),
+                      ),
                 ],
               ),
               IconButton(
