@@ -1,4 +1,4 @@
-![validasi saat data kosong](https://github.com/user-attachments/assets/27cd0403-6e54-477a-a914-fb3497b8c93d)# todoapp
+# todoapp
 
 A new Flutter project.
 
