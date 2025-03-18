@@ -105,6 +105,12 @@ class _TodoAppState extends State<TodoApp> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Harap isi tugas";
+                        }
+                        return null;
+                      },
                     ),
                   ],
                 ),
