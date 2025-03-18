@@ -14,6 +14,8 @@ class _TodoAppState extends State<TodoApp> {
   final TextEditingController _nameController = TextEditingController();
   DateTime? selectedDate;
 
+
+
   void _pickDate() {
     BottomPicker.date(
       pickerTitle: Text(
@@ -34,6 +36,29 @@ class _TodoAppState extends State<TodoApp> {
       minDateTime: DateTime(2000),
       pickerTextStyle: const TextStyle(fontSize: 16, color: Colors.black),
     ).show(context);
+  }
+
+
+  void _submitData() {
+    if (_formKey.currentState!.validate() && selectedDate != null) {
+      setState(() {
+        tasks.add({
+          "title": _nameController.text,
+          "deadline": DateFormat("dd-MM-yyyy HH:mm").format(selectedDate!),
+          "done": false,
+        });
+        _nameController.clear();
+        selectedDate = null;
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Tugas berhasil ditambahkan!"),
+          backgroundColor: Colors.green,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
   }
 
   @override
