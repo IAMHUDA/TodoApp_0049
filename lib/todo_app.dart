@@ -10,7 +10,9 @@ class TodoApp extends StatefulWidget {
 }
 
 class _TodoAppState extends State<TodoApp> {
-
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
+  DateTime? selectedDate;
 
   @override
   Widget build(BuildContext context) {
