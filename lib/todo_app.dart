@@ -143,7 +143,7 @@ class _TodoAppState extends State<TodoApp> {
                       width: double.infinity,
                       height: 40,
                       child: ElevatedButton(
-                        onPressed: (){},
+                        onPressed: _submitData,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.purple,
                           shape: RoundedRectangleBorder(
@@ -156,6 +156,8 @@ class _TodoAppState extends State<TodoApp> {
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
+              const Text("Daftar Tugas", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ],
           ),
         ),
