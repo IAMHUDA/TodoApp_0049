@@ -147,6 +147,7 @@ class _TodoAppState extends State<TodoApp> {
                 ),
               const SizedBox(height: 10),
               Form(
+                key: _formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
