@@ -16,7 +16,7 @@ class _TodoAppState extends State<TodoApp> {
 
   void _pickDate() {
     BottomPicker.date(
-  pickerTitle: Text(
+      pickerTitle: Text(
         'Set date',
         style: TextStyle(
           fontWeight: FontWeight.bold,
@@ -45,50 +45,73 @@ class _TodoAppState extends State<TodoApp> {
         elevation: 0,
         foregroundColor: Colors.black,
       ),
-      body: SafeArea
-      (child:
-      Padding(padding: 
-      const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Task Date:", style: TextStyle(fontWeight: FontWeight.bold)),
-                  Text(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Task Date:",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
                         selectedDate != null
-                            ? DateFormat("dd-MM-yyyy HH:mm").format(selectedDate!)
+                            ? DateFormat(
+                              "dd-MM-yyyy HH:mm",
+                            ).format(selectedDate!)
                             : "Pilih tanggal",
                         style: const TextStyle(color: Colors.black54),
                       ),
+                    ],
+                  ),
+                  IconButton(
+                    onPressed: _pickDate,
+                    icon: const Icon(
+                      Icons.date_range_rounded,
+                      color: Colors.blue,
+                    ),
+                  ),
                 ],
               ),
-              IconButton(
-                    onPressed: _pickDate,
-                    icon: const Icon(Icons.date_range_rounded, color: Colors.blue),
-                  ),
-            ],
-          ),
-          if (selectedDate == null)
+              if (selectedDate == null)
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 5),
-                  child: Text("Silakan pilih tanggal", style: TextStyle(color: Colors.red)),
+                  child: Text(
+                    "Silakan pilih tanggal",
+                    style: TextStyle(color: Colors.red),
+                  ),
                 ),
               const SizedBox(height: 10),
-          Form(child: 
-          Column(
-            children: [
-              const Text("Nama Tugas", style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
-              
+              Form(
+                child: Column(
+                  children: [
+                    const Text(
+                      "Nama Tugas",
+                      style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                    ),
+                    TextFormField(
+                      controller: _nameController,
+                      decoration: InputDecoration(
+                        hintText: "Masukkan nama tugas",
+                        border: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.red),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
-          ))
-        ],
-      ),
-      )
+          ),
+        ),
       ),
     );
   }
